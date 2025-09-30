@@ -155,8 +155,8 @@
 
     <ListView
         android:id="@+id/lv_v_listOfColors"
-        android:layout_width="407dp"
-        android:layout_height="359dp"
+        android:layout_width="411dp"
+        android:layout_height="403dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
