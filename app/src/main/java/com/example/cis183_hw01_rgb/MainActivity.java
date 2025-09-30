@@ -1,3 +1,9 @@
+//Name: Marcus Rollins
+//Date: 09/28/25
+//Desc: An app that allows a user to manipulate SeekBars to choose colors. They can then
+//      save the colors to an arraylist and re-view the colors by selecting them from a
+//      ListView. They also all show their hex values when a color is selected.
+
 package com.example.cis183_hw01_rgb;
 
 import android.os.Bundle;
