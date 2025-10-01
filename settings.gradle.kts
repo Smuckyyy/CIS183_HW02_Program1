@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CIS183_HW01_RGB"
+rootProject.name = "CIS183_HW02_Program1"
 include(":app")
  
