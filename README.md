@@ -1,2 +1,2 @@
-# CIS183_HW01_RGB
+# CIS183_HW02_Program1
 
