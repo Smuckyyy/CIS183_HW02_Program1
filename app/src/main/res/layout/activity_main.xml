@@ -29,7 +29,7 @@
         app:layout_constraintVertical_bias="0.208" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_v_blueTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blue:"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.209" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_v_redTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Red:"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.208" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_v_greenTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Green:"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_v_hexRepresent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hex Representation: "
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/tv_v_hexRepresent"
         app:layout_constraintTop_toBottomOf="@+id/sb_v_Blue"
         app:layout_constraintVertical_bias="0.061" />
 
