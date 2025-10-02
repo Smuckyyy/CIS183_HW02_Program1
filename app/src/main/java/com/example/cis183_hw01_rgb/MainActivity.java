@@ -9,6 +9,8 @@ package com.example.cis183_hw01_rgb;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -21,6 +23,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -48,6 +52,8 @@ public class MainActivity extends AppCompatActivity
 
     //This is for an array for all the TextView that need to change color based on the background
     TextView[] textViews;
+    ArrayList<Colors> listOfColors = new ArrayList<>();
+    ColorAdapter colorAdapter;
 
     private int r = 0;
     private int g = 0;
@@ -101,6 +107,34 @@ public class MainActivity extends AppCompatActivity
         //ListView
         lv_j_listOfColors = findViewById(R.id.lv_v_listOfColors);
 
+        //This allows the ListView to show the data saved by the user
+        colorAdapter = new ColorAdapter(this, listOfColors);
+        lv_j_listOfColors.setAdapter(colorAdapter);
+
+
+        //Button Call
+        btn_j_saveColor.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                String hex = tv_j_hexNumber.getText().toString();
+                Colors newColor = new Colors(r, g, b, hex);
+                listOfColors.add(newColor);
+                colorAdapter.notifyDataSetChanged(); // refresh ListView
+            }
+        });
+
+        //This is for the ListView so that when it is clicked, it changes the background color
+        lv_j_listOfColors.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Colors colorSelected = listOfColors.get(position);
+                applyColorToMainScreen(colorSelected);
+            }
+        });
 
         //--------------------
         //Function Calls
@@ -113,6 +147,21 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //This passes data from the ListView to the MainActivity
+    private void applyColorToMainScreen(Colors color)
+    {
+        r = color.getR();
+        g = color.getG();
+        b = color.getB();
+
+        sb_j_Red.setProgress(r);
+        sb_j_Green.setProgress(g);
+        sb_j_Blue.setProgress(b);
+
+        mainLayout.setBackgroundColor(Color.rgb(r, g, b));
+        tv_j_hexNumber.setText(color.getHex());
+    }
+
     //SeekBars passing Information to TextView and changing background color
     private SeekBar.OnSeekBarChangeListener makeSeekBarListener(TextView textView)
     {
@@ -123,8 +172,8 @@ public class MainActivity extends AppCompatActivity
             {
                 textView.setText(String.valueOf(progress));
 
-                //These checks if the seekBars move, and depending on which one, it updates that specific
-                //color depending on the helper below
+                //These checks if the seekBars move, and depending on which one,
+                //it updates that specific color depending on the helper below
                 if(seekBar == sb_j_Red)
                 {
                     r = progress;
@@ -141,6 +190,10 @@ public class MainActivity extends AppCompatActivity
                 //Update the background color using this helper
                 mainLayout.setBackgroundColor(Color.rgb(r, g, b));
 
+                //Update the hex display text view
+                String hex = String.format("#%02X%02X%02X", r, g, b);
+                tv_j_hexNumber.setText(hex);
+
                 //Change the text color depending on the background using this formula
                 //and the for loop below
                 double brightness = (0.299 * r) + (0.587 * g) + (0.114 * b);
@@ -151,7 +204,8 @@ public class MainActivity extends AppCompatActivity
                     //Using the formula above if the brightness is less than 128 (dark color)
                     if(brightness < 128)
                     {
-                        //For each textview, ([i]) it changes the color to white since it's a dark background
+                        //For each textview, ([i])
+                        //Changes the color to white since it's a dark background
                         textViews[i].setTextColor(Color.WHITE);
                     }
                     else

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v_v_row_colorBox"
+        android:layout_width="412dp"
+        android:layout_height="95dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_v_row_Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red:"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toEndOf="@+id/v_v_row_colorBox"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/v_v_row_colorBox"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green:"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toEndOf="@+id/v_v_row_colorBox"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue:"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_hexRepresent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Hex:"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.789" />
+
+    <TextView
+        android:id="@+id/tv_v_row_redValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="121"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toStartOf="@+id/tv_v_row_Green"
+        app:layout_constraintStart_toEndOf="@+id/tv_v_row_Red"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_greenValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="127"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toStartOf="@+id/tv_v_row_Blue"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toEndOf="@+id/tv_v_row_Green"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_blueValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="138"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toEndOf="@+id/tv_v_row_Blue"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_v_row_hexValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7AB597"
+        app:layout_constraintBottom_toBottomOf="@+id/v_v_row_colorBox"
+        app:layout_constraintEnd_toEndOf="@+id/v_v_row_colorBox"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toEndOf="@+id/tv_v_row_hexRepresent"
+        app:layout_constraintTop_toTopOf="@+id/v_v_row_colorBox"
+        app:layout_constraintVertical_bias="0.789" />
+</androidx.constraintlayout.widget.ConstraintLayout>
