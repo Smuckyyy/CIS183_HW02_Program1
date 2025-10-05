@@ -122,6 +122,13 @@ public class MainActivity extends AppCompatActivity
                 Colors newColor = new Colors(r, g, b, hex);
                 listOfColors.add(newColor);
                 colorAdapter.notifyDataSetChanged(); // refresh ListView
+
+                //Refresh everything (background, text views, hex value)
+                sb_j_Red.setProgress(255);
+                sb_j_Green.setProgress(255);
+                sb_j_Blue.setProgress(255);
+
+
             }
         });
 
